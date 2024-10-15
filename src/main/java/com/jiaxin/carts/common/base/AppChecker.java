@@ -12,13 +12,6 @@ public class AppChecker {
         }
     }
 
-    public static void assertPositive(int number) {
-        if (number <= 0) {
-            throw new IllegalRequestException(ErrorCode.ILLEGAL_REQUEST.getCode(),
-                    ErrorCode.ILLEGAL_REQUEST.getMessage());
-        }
-    }
-
     public static boolean isNull(Object object) {
         return object == null;
     }
