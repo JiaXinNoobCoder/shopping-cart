@@ -1,4 +1,4 @@
-package com.jiaxin.carts.model;
+package com.jiaxin.carts.entity;
 
 
 import jakarta.persistence.Column;
@@ -19,8 +19,8 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id")
-    private Integer cartID;
+    private int cartID;
 
     @Column(name = "user_id")
-    private Integer userID;
+    private int userID;
 }

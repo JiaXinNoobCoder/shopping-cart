@@ -1,5 +1,4 @@
-package com.jiaxin.carts.model;
-
+package com.jiaxin.carts.entity;
 
 
 import jakarta.persistence.Column;
@@ -11,20 +10,19 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 /**
- * 用户实体类
+ * 商品实体类
  * */
 @Entity
-@Table(name = "\"user\"", schema = "shopping_cart")
+@Table(name = "product", schema = "shopping_cart")
 @Data
-public class User {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Integer userID;
+    @Column(name = "product_id")
+    private int productID;
 
-    @Column(name = "user_name")
-    private String userName;
+    private String name;
 
-    @Column(name = "email")
-    private String email;
+    // 商品价格，单位为分
+    private long price;
 }

@@ -1,6 +1,6 @@
 package com.jiaxin.carts.service.impl;
 
-import com.jiaxin.carts.model.CartItem;
+import com.jiaxin.carts.entity.CartItem;
 import com.jiaxin.carts.service.PriceCalculateService;
 import org.springframework.stereotype.Service;
 

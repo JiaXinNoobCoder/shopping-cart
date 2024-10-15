@@ -1,6 +1,6 @@
 package com.jiaxin.carts.service;
 
-import com.jiaxin.carts.model.CartItem;
+import com.jiaxin.carts.entity.CartItem;
 
 
 import java.util.List;

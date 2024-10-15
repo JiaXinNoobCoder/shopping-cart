@@ -1,12 +1,10 @@
-package com.jiaxin.carts.dao;
+package com.jiaxin.carts.repository;
 
-import com.jiaxin.carts.model.Cart;
+import com.jiaxin.carts.entity.Cart;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 @Repository
 public interface CartRepository extends org.springframework.data.repository.Repository<Cart, Integer> {
-    Optional<Cart> getCartByUserID(int userID);
+    Cart getCartByUserID(int userID);
 
 }

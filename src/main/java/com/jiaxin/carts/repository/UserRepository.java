@@ -1,13 +1,11 @@
-package com.jiaxin.carts.dao;
+package com.jiaxin.carts.repository;
 
 
-import com.jiaxin.carts.model.User;
+import com.jiaxin.carts.entity.User;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 @Repository
 public interface UserRepository extends org.springframework.data.repository.Repository<User, Integer> {
-    Optional<User> findUserByUserID(int userID);
+    User findUserByUserID(int userID);
 
 }
