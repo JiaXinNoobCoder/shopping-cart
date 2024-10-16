@@ -54,14 +54,17 @@ PS：服务启动时会自动执行数据库初始化文件
 #### API说明
 
 1. Get /cart/list/{userID}
-   1. Description: Get the list of products in the current shopping cart with the total price.
+   Description: Get the list of products in the current shopping cart with the total price.
+
 2. Post /cart/products/add
    Description: Add a product to the shopping cart.
-   /cart/products/delete
+   
 3. Post /cart/products/delete
    Description: Remove a product from the shopping cart.
+
 4. Patch /cart/products/update
    Description: Update the quantity of a product in the shopping cart.
+
 5. Post /cart/clear
    Description: Clear all products from the shopping cart.
 
