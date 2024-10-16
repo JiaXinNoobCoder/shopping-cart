@@ -3,7 +3,7 @@
 2.Maven-3.9.4
 
 #部署步骤
-1.选择main分支将源码拉到本地
+1.选择main分支将源码拉到本地 仓库地址: https://github.com/JiaXinNoobCoder/shopping-cart
 2.使用maven插件可以直接执行package命令，默认会将打好的jar包放到target下面
 3.命令行执行 java -jar {包名}.jar
 4.查看服务是否成功启动，启动后默认监听8080端口
