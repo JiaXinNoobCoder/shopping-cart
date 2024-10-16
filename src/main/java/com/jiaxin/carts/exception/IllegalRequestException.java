@@ -7,7 +7,4 @@ public class IllegalRequestException extends AppException{
         super(errorCode, errorMessage);
     }
 
-    public IllegalRequestException(ErrorCode errorCode, String errorMessage, Throwable cause) {
-        super(errorCode, errorMessage, cause);
-    }
 }
