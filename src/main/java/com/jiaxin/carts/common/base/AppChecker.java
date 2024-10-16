@@ -26,4 +26,11 @@ public class AppChecker {
         }
     }
 
+    public static void assertNotEqualToZero(int number) {
+        if (number == 0) {
+            throw new IllegalRequestException(ErrorCode.ILLEGAL_REQUEST,
+                    ErrorCode.ILLEGAL_REQUEST.getMessage());
+        }
+    }
+
 }

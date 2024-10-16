@@ -95,6 +95,8 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public ProductsOperationResult doUpdateQuantityOfProducts(UpdateQuantityOfProductsRequest updateQuantityOfProductsRequest) {
+
+        AppChecker.assertNotEqualToZero(updateQuantityOfProductsRequest.getQuantity());
         Cart cart = cartRepository.getCartByUserIDAndCartID(updateQuantityOfProductsRequest.getUserID(),
                 updateQuantityOfProductsRequest.getCartID());
         AppChecker.assertNotNull(cart);
