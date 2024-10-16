@@ -28,7 +28,12 @@ src/main/resources/application.properties
 src/main/resources/schema.sql 建表语句
 src/main/resources/data.sql 初始化数据语句
 
+#业务假设
+1.假设调用时用户已经登录验证
+2.调用时保证每个用户在数据库有且只有一个购物车
+
 PS：服务启动时会自动执行数据库初始化文件
+
 
 
 
