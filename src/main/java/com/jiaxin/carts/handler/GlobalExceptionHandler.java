@@ -1,6 +1,7 @@
 package com.jiaxin.carts.handler;
 
 import com.jiaxin.carts.common.base.AppResponse;
+import com.jiaxin.carts.exception.AppException;
 import com.jiaxin.carts.exception.IllegalRequestException;
 import com.jiaxin.carts.exception.enums.ErrorCode;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(appResponse, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(Throwable.class)
+    @ExceptionHandler(AppException.class)
     public ResponseEntity<AppResponse> handleAppException() {
         AppResponse appResponse = AppResponse.buildFailed(ErrorCode.SYSTEM_FAILED, ErrorCode.SYSTEM_FAILED.getMessage());
         return new ResponseEntity<>(appResponse, HttpStatus.BAD_GATEWAY);

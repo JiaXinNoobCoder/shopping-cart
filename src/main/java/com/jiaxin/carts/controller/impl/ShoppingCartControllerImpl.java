@@ -23,8 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/cart")
 public class ShoppingCartControllerImpl implements ShoppingCartController {
+
     @Autowired
     private CartService cartService;
+
     @GetMapping("list/{userID}")
     @Override
     public AppResponse getShoppingCartByUserID(@PathVariable int userID) {
