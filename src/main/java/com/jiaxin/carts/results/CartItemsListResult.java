@@ -12,6 +12,7 @@ public class CartItemsListResult {
     @JsonProperty("user_name")
     private String userName;
 
+    // 单位元
     @JsonProperty("total_price")
     private double totalPrice;
 
@@ -22,5 +23,9 @@ public class CartItemsListResult {
         this.userName = userName;
         this.totalPrice = totalPrice;
         this.cartItems = cartItems;
+    }
+
+    public CartItemsListResult() {
+
     }
 }

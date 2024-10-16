@@ -41,6 +41,8 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartItemsListResult getCartItemsListByUserID(int userID) {
+
+        AppChecker.assertPositive(userID);
         User user = userRepository.findUserByUserID(userID);
         AppChecker.assertNotNull(user);
         Cart cart = cartRepository.getCartByUserID(user.getUserID());
