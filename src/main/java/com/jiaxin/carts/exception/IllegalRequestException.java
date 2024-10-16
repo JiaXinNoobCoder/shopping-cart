@@ -1,11 +1,13 @@
 package com.jiaxin.carts.exception;
 
+import com.jiaxin.carts.exception.enums.ErrorCode;
+
 public class IllegalRequestException extends AppException{
-    public IllegalRequestException(int errorCode, String errorMessage) {
+    public IllegalRequestException(ErrorCode errorCode, String errorMessage) {
         super(errorCode, errorMessage);
     }
 
-    public IllegalRequestException(int errorCode, String errorMessage, Throwable cause) {
+    public IllegalRequestException(ErrorCode errorCode, String errorMessage, Throwable cause) {
         super(errorCode, errorMessage, cause);
     }
 }

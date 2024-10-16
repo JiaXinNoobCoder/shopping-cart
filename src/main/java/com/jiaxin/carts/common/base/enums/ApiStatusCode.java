@@ -1,4 +1,4 @@
-package com.jiaxin.carts.common.base;
+package com.jiaxin.carts.common.base.enums;
 
 public enum ApiStatusCode {
     // 成功响应码

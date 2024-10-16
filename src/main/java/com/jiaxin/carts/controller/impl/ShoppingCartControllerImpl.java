@@ -1,15 +1,19 @@
 package com.jiaxin.carts.controller.impl;
 
-import com.jiaxin.carts.common.base.ApiStatusCode;
+import com.jiaxin.carts.common.base.enums.ApiStatusCode;
 import com.jiaxin.carts.common.base.AppResponse;
 import com.jiaxin.carts.common.param.AddProductsRequest;
+import com.jiaxin.carts.common.param.ClearAllProductsRequest;
+import com.jiaxin.carts.common.param.RemoveProductsRequest;
+import com.jiaxin.carts.common.param.UpdateQuantityOfProductsRequest;
 import com.jiaxin.carts.controller.ShoppingCartController;
 import com.jiaxin.carts.service.CartService;
-import com.jiaxin.carts.view.AddProductsResult;
-import com.jiaxin.carts.view.CartItemsListResult;
+import com.jiaxin.carts.results.CartItemsListResult;
+import com.jiaxin.carts.results.ProductsOperationResult;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,14 +32,31 @@ public class ShoppingCartControllerImpl implements ShoppingCartController {
         return AppResponse.buildSuccess(cartItemsListResult, ApiStatusCode.SUCCESS_200);
     }
 
-    @PostMapping("add")
+    @PostMapping("products/add")
     @Override
     public AppResponse addProductsToCart(@Valid @RequestBody AddProductsRequest addProductsRequest) {
-        AddProductsResult addProductsResult = cartService.doAddProducts(addProductsRequest);
-        return AppResponse.buildSuccess(addProductsResult, ApiStatusCode.SUCCESS_200);
+        ProductsOperationResult productsOperationResult = cartService.doAddProducts(addProductsRequest);
+        return AppResponse.buildSuccess(productsOperationResult, ApiStatusCode.SUCCESS_200);
     }
 
-
+    @PostMapping("products/delete")
+    @Override
+    public AppResponse removeProductsFromCart(@Valid @RequestBody RemoveProductsRequest removeProductsRequest) {
+        ProductsOperationResult productsOperationResult = cartService.doRemoveProducts(removeProductsRequest);
+        return AppResponse.buildSuccess(productsOperationResult, ApiStatusCode.SUCCESS_200);
+    }
+    @PatchMapping("products/update")
+    @Override
+    public AppResponse UpdateQuantityOfProducts(@Valid @RequestBody UpdateQuantityOfProductsRequest updateQuantityOfProductsRequest) {
+        ProductsOperationResult productsOperationResult = cartService.doUpdateQuantityOfProducts(updateQuantityOfProductsRequest);
+        return AppResponse.buildSuccess(productsOperationResult, ApiStatusCode.SUCCESS_200);
+    }
+    @PostMapping("clear")
+    @Override
+    public AppResponse ClearAllProducts(@Valid @RequestBody ClearAllProductsRequest clearAllProductsRequest) {
+        cartService.doClearAllProducts(clearAllProductsRequest);
+        return AppResponse.buildSuccess(ApiStatusCode.SUCCESS_200);
+    }
 
 
 }

@@ -1,4 +1,4 @@
-package com.jiaxin.carts.view;
+package com.jiaxin.carts.results;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CartItemsListResult {
-    @JsonProperty("belong_to")
-    private String belongTo;
+    @JsonProperty("user_name")
+    private String userName;
 
     @JsonProperty("total_price")
     private double totalPrice;
@@ -18,8 +18,8 @@ public class CartItemsListResult {
     @JsonProperty("cart_items")
     private List<CartItem> cartItems;
 
-    public CartItemsListResult(String belongTo, double totalPrice, List<CartItem> cartItems) {
-        this.belongTo = belongTo;
+    public CartItemsListResult(String userName, double totalPrice, List<CartItem> cartItems) {
+        this.userName = userName;
         this.totalPrice = totalPrice;
         this.cartItems = cartItems;
     }

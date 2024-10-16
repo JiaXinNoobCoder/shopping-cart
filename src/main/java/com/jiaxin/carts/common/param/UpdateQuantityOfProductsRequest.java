@@ -6,12 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 
-/**
- * 加入商品到购物车
- * */
 @Data
-public class AddProductsRequest {
-
+public class UpdateQuantityOfProductsRequest {
     @JsonProperty("user_id")
     @NotNull
     @Min(value = 1, message = "illegal value for a userID")
@@ -27,7 +23,8 @@ public class AddProductsRequest {
     @Min(value = 1, message = "illegal value for a productID")
     private int productID;
 
+    @JsonProperty("change_quantity")
     @NotNull
-    @Min(value = 1, message = "illegal value for a quantity")
     private int quantity;
+
 }

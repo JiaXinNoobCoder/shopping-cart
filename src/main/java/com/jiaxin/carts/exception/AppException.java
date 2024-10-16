@@ -1,11 +1,13 @@
 package com.jiaxin.carts.exception;
 
+import com.jiaxin.carts.exception.enums.ErrorCode;
+
 public class AppException extends RuntimeException {
-    private final int errorCode;
+    private final ErrorCode errorCode;
 
     private final String errorMessage;
 
-    public AppException(int errorCode, String errorMessage) {
+    public AppException(ErrorCode errorCode, String errorMessage) {
 
         super(errorMessage);
 
@@ -17,7 +19,7 @@ public class AppException extends RuntimeException {
 
 
 
-    public AppException(int errorCode, String errorMessage, Throwable cause) {
+    public AppException(ErrorCode errorCode, String errorMessage, Throwable cause) {
 
         super(errorMessage, cause);
 
@@ -27,7 +29,7 @@ public class AppException extends RuntimeException {
 
     }
 
-    public int getErrorCode() {
+    public ErrorCode getErrorCode() {
 
         return errorCode;
 

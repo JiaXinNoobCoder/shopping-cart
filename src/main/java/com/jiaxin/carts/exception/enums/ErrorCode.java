@@ -1,9 +1,9 @@
-package com.jiaxin.carts.exception;
+package com.jiaxin.carts.exception.enums;
 
 public enum ErrorCode {
     ILLEGAL_REQUEST(1001, "The request is illegal or invalid."),
     RESOURCE_NOT_FOUND(1002, "The requested resource was not found."),
-    OPERATION_FAILED(1003, "The operation failed due to an internal error."),
+    SYSTEM_FAILED(1003, "The System occurs an internal error."),
     UNAUTHORIZED(1004, "You are not authorized to perform this action.");
     private final int code;
     private final String message;
