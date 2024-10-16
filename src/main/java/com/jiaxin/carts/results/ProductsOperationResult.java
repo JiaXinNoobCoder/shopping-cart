@@ -14,6 +14,7 @@ public class ProductsOperationResult {
 
     @JsonProperty("operator_id")
     private int operator;
+
     @JsonProperty("product_id")
     private int productID;
 

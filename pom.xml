@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.jiaxin</groupId>
     <artifactId>carts</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>carts</name>
     <description>Demo project for shopping cart</description>
 
@@ -60,6 +60,7 @@
     </dependencies>
 
     <build>
+        <finalName>springboot-shopping-cart</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
