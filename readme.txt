@@ -37,13 +37,29 @@ src/main/resources/application.properties
 #数据库初始化文件
 src/main/resources/schema.sql 建表语句
 src/main/resources/data.sql 初始化数据语句
+PS：服务启动时会自动执行数据库初始化文件
 
 #业务假设
 1.假设调用时用户已经登录验证
 2.调用时保证每个用户在数据库有且只有一个购物车
 3.数据库中商品价格以分为单位存储，页面显示为元，且只保留两位小数
 
-PS：服务启动时会自动执行数据库初始化文件
+#API说明
+1./cart/list/{userID}
+Description: Get the list of products in the current shopping cart with the total price.
+
+2./cart/products/add
+Description: Add a product to the shopping cart.
+/cart/products/delete
+
+3./cart/products/delete
+Description: Remove a product from the shopping cart.
+
+4./cart/products/update
+Description: Update the quantity of a product in the shopping cart.
+
+5./cart/clear
+Description: Clear all products from the shopping cart.
 
 
 
